@@ -1,0 +1,5 @@
+export type RuleStatus = 'met' | 'notMet' | 'indeterminate' | 'manualReview';
+export interface RuleResult { status: RuleStatus; criterionName: string; dateOfEvent?: string; infectionWindowPeriod?: string; supportingFacts: string[]; missingInformation: string[]; failedElements: string[]; warnings: string[]; manualReviewItems: string[]; manualSectionReference: string; }
+export interface BloodOrganism { name: string; genus: string; species: string; category: string; positive: string; override?: boolean; }
+export interface BloodSpecimen { id: string; date: string; time: string; number: string; occasion: string; source: string; method: string; organisms: BloodOrganism[]; notes: string; }
+export interface WorkupData { admission: string; discharge: string; dob: string; age: string; ageUnit: string; location: string; reviewDate: string; specimens: BloodSpecimen[]; fever: string; hypotension: string; symptoms: string; secondary: string; secondaryDetails: string; neutropenia: string; gi: string; linePresent: string; lineInsertion: string; lineRemoval: string; lineAccessed: string; palliative: string; mucosal: string; }

@@ -1,0 +1,11 @@
+{
+  "sourceVersion": "NHSN January 2026 terminology support dataset (starter set; validate in Terminology Browser)",
+  "organisms": [
+    {"displayName":"Staphylococcus aureus","genus":"Staphylococcus","species":"aureus","recognizedPathogen":true,"commonCommensal":false,"mbiEligible":false,"viridansGroupStreptococcus":false,"rothia":false,"excludedFromPrimaryLCBI":false,"requiresManualReview":false,"sourceVersion":"January 2026"},
+    {"displayName":"Escherichia coli","genus":"Escherichia","species":"coli","recognizedPathogen":true,"commonCommensal":false,"mbiEligible":true,"viridansGroupStreptococcus":false,"rothia":false,"excludedFromPrimaryLCBI":false,"requiresManualReview":false,"sourceVersion":"January 2026"},
+    {"displayName":"Staphylococcus epidermidis","genus":"Staphylococcus","species":"epidermidis","recognizedPathogen":false,"commonCommensal":true,"mbiEligible":false,"viridansGroupStreptococcus":false,"rothia":false,"excludedFromPrimaryLCBI":false,"requiresManualReview":false,"sourceVersion":"January 2026"},
+    {"displayName":"Candida albicans","genus":"Candida","species":"albicans","recognizedPathogen":true,"commonCommensal":false,"mbiEligible":true,"viridansGroupStreptococcus":false,"rothia":false,"excludedFromPrimaryLCBI":false,"requiresManualReview":false,"sourceVersion":"January 2026"},
+    {"displayName":"Viridans group Streptococcus","genus":"Streptococcus","species":"viridans group","recognizedPathogen":true,"commonCommensal":false,"mbiEligible":true,"viridansGroupStreptococcus":true,"rothia":false,"excludedFromPrimaryLCBI":false,"requiresManualReview":true,"sourceVersion":"January 2026"},
+    {"displayName":"Rothia species","genus":"Rothia","species":"species","recognizedPathogen":true,"commonCommensal":false,"mbiEligible":true,"viridansGroupStreptococcus":false,"rothia":true,"excludedFromPrimaryLCBI":false,"requiresManualReview":true,"sourceVersion":"January 2026"}
+  ]
+}
