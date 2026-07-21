@@ -1,0 +1,8 @@
+{
+  "name": "nhsn-clabsi-rule-engine",
+  "version": "1.0.0",
+  "description": "January 2026 NHSN LCBI criteria evaluator",
+  "main": "src/index.js",
+  "scripts": { "test": "node --test" },
+  "license": "MIT"
+}
