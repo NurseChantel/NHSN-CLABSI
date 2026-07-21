@@ -1,0 +1,48 @@
+{
+  "version": "2026.1",
+  "effectiveDate": "2026-01-01",
+  "definitions": [
+    {
+      "infectionType": "SSI",
+      "criterion": "SSI criterion",
+      "scenario1Eligible": true,
+      "scenario2Eligible": false,
+      "manualVerificationRequired": true,
+      "manualVerificationReason": "Confirm the procedure category and NHSN criterion in the current protocol."
+    },
+    {
+      "infectionType": "PNEU",
+      "criterion": "PNU2",
+      "scenario1Eligible": true,
+      "scenario2Eligible": true,
+      "manualVerificationRequired": true,
+      "manualVerificationReason": "Confirm specimen eligibility and the current PNU2 definition."
+    },
+    {
+      "infectionType": "UTI",
+      "criterion": "SUTI 1a",
+      "scenario1Eligible": true,
+      "scenario2Eligible": true,
+      "manualVerificationRequired": true,
+      "manualVerificationReason": "Confirm whether the blood culture is allowed by the selected SUTI criterion."
+    },
+    {
+      "infectionType": "ENDO",
+      "criterion": "Endocarditis",
+      "scenario1Eligible": false,
+      "scenario2Eligible": false,
+      "manualVerificationRequired": true,
+      "specialReview": true,
+      "manualVerificationReason": "Endocarditis has specialized infection-window, RIT, pathogen-assignment, and SBAP rules."
+    },
+    {
+      "infectionType": "BONE",
+      "criterion": "Osteomyelitis",
+      "scenario1Eligible": false,
+      "scenario2Eligible": false,
+      "manualVerificationRequired": true,
+      "specialReview": true,
+      "manualVerificationReason": "Osteomyelitis has specialized infection-window, RIT, pathogen-assignment, and SBAP rules."
+    }
+  ]
+}
