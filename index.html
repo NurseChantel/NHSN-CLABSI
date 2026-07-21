@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHSN CLABSI classification assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">January 2026 rules</p>
+        <h1>CLABSI classification assistant</h1>
+        <p class="lede">Assess LCBI and MBI-LCBI first. A positive culture plus a central line alone never establishes a CLABSI.</p>
+      </header>
+
+      <aside class="notice" id="definitionWarning">Chapter 2 timing information and a site-specific NHSN definition have not been provided. POA/HAI and secondary-BSI results require manual review until these inputs are completed.</aside>
+      <form id="assessment" novalidate>
+        <section><h2>1. Event foundation</h2><div class="grid">
+          <label>Patient age (days)<input id="ageDays" type="number" min="0" placeholder="e.g., 3" /></label>
+          <label>Bloodstream organism(s)<input id="bloodOrganisms" placeholder="e.g., Group B Streptococcus" /></label>
+          <label>LCBI / MBI criterion<select id="criterion"><option value="unknown">Not yet evaluated</option><option value="none">No LCBI criteria met</option><option value="lcbi">LCBI established</option><option value="mbi">MBI-LCBI established</option></select></label>
+          <label>DOE<input id="doe" type="date" /></label>
+          <label>BSI IWP<input id="iwp" placeholder="e.g., Jan 8–Jan 14, 2026" /></label>
+          <label>BSI RIT<input id="rit" placeholder="e.g., Jan 8–Jan 21, 2026" /></label>
+        </div></section>
+
+        <section><h2>2. Chapter 2 and secondary BSI</h2><div class="grid">
+          <label>Chapter 2 timing data<select id="timing"><option value="unknown">Not provided</option><option value="poa">Present on admission</option><option value="hai">Healthcare-associated</option></select></label>
+          <label>Secondary BSI determination<select id="secondary"><option value="unknown">Site-specific definition not provided</option><option value="yes">Yes — secondary BSI</option><option value="no">No — primary BSI</option></select></label>
+          <label class="wide">Supporting evidence / notes<textarea id="evidence" rows="3" placeholder="Documented facts, cultures, symptoms, and dates"></textarea></label>
+        </div></section>
+
+        <section><h2>3. Central-line eligibility</h2><div class="grid">
+          <label>Eligible central line on DOE or preceding day?<select id="eligibleLine"><option value="unknown">Not provided</option><option value="yes">Yes</option><option value="no">No</option></select></label>
+          <label>Central-line day on DOE<input id="lineDay" type="number" min="0" placeholder="e.g., 4" /></label>
+          <label class="check"><input id="centralLineField" type="checkbox" /> Central-line field marked Yes</label>
+        </div></section>
+
+        <section><h2>4. January 2026 exclusions</h2>
+          <p class="hint">Device exclusions require the device to have been present for more than two calendar days on the BSI DOE and still be present on the DOE or preceding day.</p>
+          <div class="grid devices">
+            <fieldset><legend>ECMO / ECLS</legend><label>Days present on DOE<input id="ecmoDays" type="number" min="0" /></label><label class="check"><input id="ecmoCurrent" type="checkbox" /> Present on DOE or preceding day</label></fieldset>
+            <fieldset><legend>Ventricular assist device</legend><label>Days present on DOE<input id="vadDays" type="number" min="0" /></label><label class="check"><input id="vadCurrent" type="checkbox" /> Present on DOE or preceding day</label></fieldset>
+            <fieldset><legend>Total artificial heart</legend><label>Days present on DOE<input id="tahDays" type="number" min="0" /></label><label class="check"><input id="tahCurrent" type="checkbox" /> Present on DOE or preceding day</label></fieldset>
+          </div>
+          <div class="grid exclusion-detail">
+            <label class="check wide"><input id="injection" type="checkbox" /> Documentation during the BSI IWP explicitly states observed or suspected <strong>injection into the vascular access line</strong>.</label>
+            <label class="check wide"><input id="eb" type="checkbox" /> Genetic epidermolysis bullosa; pediatric patient; documented during this admission.</label>
+            <label class="check wide"><input id="factitious" type="checkbox" /> Known or suspected Munchausen syndrome by proxy / factitious disorder imposed on another, documented during this admission.</label>
+            <label>Permitted pus site<select id="pusSite"><option value="">None / not provided</option><option>Nonqualifying arterial catheter</option><option>AV fistula</option><option>AV graft</option><option>HERO dialysis catheter</option><option>IABP</option><option>Nonaccessed central line</option><option>Peripheral IV</option><option>Midline that does not meet the central-line definition</option></select></label>
+            <label class="check"><input id="pusSpecimen" type="checkbox" /> Specimen collected from this site</label>
+            <label class="check"><input id="pusMatch" type="checkbox" /> ≥1 site organism matches a bloodstream organism during BSI IWP</label>
+          </div>
+        </section>
+        <button type="submit">Classify event</button>
+      </form>
+
+      <section class="result" id="result" aria-live="polite"><h2>Final result</h2><p>Complete the assessment and select <strong>Classify event</strong>.</p></section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
